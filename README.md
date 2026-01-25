@@ -49,7 +49,7 @@ As of release, Dawn Client v2 will only feature Windows support. Linux and macOS
 1. Open the [**GitHub Releases**](https://github.com/zVipexx/dawn-client-v2/releases) page
 2. Download the installer for your operating system:
 
-   * **Windows**: `.exe`
+   * **Windows**: `.msi`
    * **macOS**: coming soon (maybe)
    * **Linux**: coming soon (maybe)
 3. Run the installer and launch the client
