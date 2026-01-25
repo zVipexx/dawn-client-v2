@@ -1,0 +1,22 @@
+[[permission]]
+identifier = "allow-custom-commands"
+commands.allow = [
+    "save_css",
+    "toggle_fullscreen",
+    "open_devtools",
+    "convert_file_to_base64",
+    "set_discord_rpc_activity",
+    "toggle_discord_rpc",
+    "exit_app",
+    "get_gallery",
+    "open_gallery_folder",
+    "delete_gallery_file",
+    "rename_gallery_file",
+    "get_gallery_file_preview",
+    "read_text_file",
+    "save_skin",
+    "save_sound",
+    "open_swapper_folder",
+    "open_scripts_folder",
+    "read_file_binary"
+]

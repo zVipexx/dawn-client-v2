@@ -1,0 +1,578 @@
+<div class="menu" id="dawn-menu" style="display: none;">
+  <div class="menu-header">
+    <div class="title">Dawn Client</div>
+    <div class="version" id="dawn-header-version">v2.0</div>
+  </div>
+  <aside class="sidebar">
+    <div class="search-input">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search" class="menu-search">
+    </div>
+    <div class="seperator"></div>
+    <div class="menu-tabs">
+      <div class="tab active" data-tab="ui">
+        <i class="fas fa-tv"></i>
+        <span>UI</span>
+      </div>
+      <div class="tab" data-tab="game">
+        <i class="fas fa-gamepad"></i>
+        <span>Game</span>
+      </div>
+    </div>
+    <div class="seperator"></div>
+    <div class="menu-tabs">
+      <div class="tab" data-tab="client">
+        <i class="fas fa-cog"></i>
+        <span>Client</span>
+      </div>
+      <div class="tab" data-tab="scripts">
+        <i class="fas fa-code"></i>
+        <span>Scripts</span>
+      </div>
+      <div class="tab" data-tab="gallery">
+        <i class="fas fa-images"></i>
+        <span>Gallery</span>
+      </div>
+      <div class="tab" data-tab="about">
+        <i class="fas fa-info"></i>
+        <span>About</span>
+      </div>
+    </div>
+  </aside>
+  <div class="content">
+    <div id="ui-options" class="options active">
+      <div class="option-group">
+        <div class="option">
+          <span>Menu Theme</span>
+          <select id="menu_theme" data-setting="menu_theme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="dawn">Dawn</option>
+            <option value="glass">Glass</option>
+          </select>
+        </div>
+        <div class="option">
+          <span>Menu Theme Color</span>
+          <div class="color-picker">
+            <input type="color" id="menu_color" data-setting="menu_color" />
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Enable CSS</span>
+          <div class="checkbox">
+            <input type="checkbox" id="css_enabled" data-setting="css_enabled" />
+            <label for="css_enabled"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>CSS Link</span>
+          <div class="right">
+            <input type="text" placeholder="https://.../.css" data-setting="css_link" />
+          </div>
+        </div>
+        <div class="option dropdown">
+          <div class="top">
+            <i class="fas fa-angle-down"></i>
+            <span>Quick CSS</span>
+          </div>
+          <div class="content">
+            <textarea placeholder="input css here" data-setting="advanced_css"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Permanent Scoreboard</span>
+          <div class="checkbox">
+            <input type="checkbox" id="perm_tablist" data-setting="perm_tablist" />
+            <label for="perm_tablist"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Hide Chat</span>
+          <div class="checkbox">
+            <input type="checkbox" id="hide_chat" data-setting="hide_chat" />
+            <label for="hide_chat"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Hide Kill Text</span>
+          <div class="checkbox">
+            <input type="checkbox" id="hide_kill_text" data-setting="hide_kill_text" />
+            <label for="hide_kill_text"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Hide Interface</span>
+          <div class="checkbox">
+            <input type="checkbox" id="hide_interface" data-setting="hide_interface" />
+            <label for="hide_interface"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Skip Loading Screen</span>
+          <div class="checkbox">
+            <input type="checkbox" id="skip_loading" data-setting="skip_loading" />
+            <label for="skip_loading"></label>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>UI Animations</span>
+          <div class="checkbox">
+            <input type="checkbox" id="ui_animations" data-setting="ui_animations" />
+            <label for="ui_animations"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Lobby Keybind Reminder</span>
+          <div class="checkbox">
+            <input type="checkbox" id="lobby_keybind_reminder" data-setting="lobby_keybind_reminder" />
+            <label for="lobby_keybind_reminder"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Spectate Button</span>
+          <div class="checkbox">
+            <input type="checkbox" id="spectate_button" data-setting="spectate_button" />
+            <label for="spectate_button"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-options" class="options">
+      <div class="option-group">
+        <div class="option">
+          <span>Enable Customizations</span>
+          <div class="checkbox">
+            <input type="checkbox" id="customizations" data-setting="customizations" />
+            <label for="customizations"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Animate Gradients</span>
+          <div class="checkbox">
+            <input type="checkbox" id="animations" data-setting="animations" />
+            <label for="animations"></label>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Colored Killfeed</span>
+          <div class="checkbox">
+            <input type="checkbox" id="colored_killfeed" data-setting="colored_killfeed" />
+            <label for="colored_killfeed"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Display K/D Ratio</span>
+          <div class="checkbox">
+            <input type="checkbox" id="display_kd" data-setting="display_kd" />
+            <label for="display_kd"></label>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Trade Buttons</span>
+          <div class="checkbox">
+            <input type="checkbox" id="show_trade_buttons" data-setting="show_trade_buttons" />
+            <label for="show_trade_buttons"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Accept Trades by Click</span>
+          <div class="checkbox">
+            <input type="checkbox" id="accept_on_click" data-setting="accept_on_click" />
+            <label for="accept_on_click"></label>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Chat Height</span>
+          <div class="right">
+            <input type="number" min="0" max="20" step="0.5" placeholder="0" data-setting="chat_height"
+              style="width: 100px;" id="chat_height" />
+          </div>
+        </div>
+        <div class="option">
+          <span>Interface Opacity</span>
+          <div class="right">
+            <input type="range" min="0" max="100" data-setting="interface_opacity" />
+          </div>
+        </div>
+        <div class="option">
+          <span>Interface Scale</span>
+          <select id="interface_bounds" data-setting="interface_bounds">
+            <option value="normal">Normal</option>
+            <option value="1">0.9x</option>
+            <option value="0">0.8x</option>
+          </select>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Hitmarker Image</span>
+          <div class="right">
+            <input type="text" placeholder="Image URL" data-setting="hitmarker_link" />
+          </div>
+        </div>
+        <div class="option">
+          <span>Kill Icon Image</span>
+          <div class="right">
+            <input type="text" placeholder="Image URL" data-setting="killicon_link" />
+          </div>
+        </div>
+        <div class="option">
+          <span>Rave Mode</span>
+          <div class="checkbox">
+            <input type="checkbox" id="rave_mode" data-setting="rave_mode" />
+            <label for="rave_mode"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="client-options" class="options">
+      <div class="option-group">
+        <div class="option">
+          <span>Fullscreen</span>
+          <div class="checkbox">
+            <input type="checkbox" id="fullscreen_enabled" data-setting="fullscreen_enabled" />
+            <label for="fullscreen_enabled"></label>
+          </div>
+        </div>
+      </div>
+      <div class="option-group">
+        <div class="option">
+          <span>Discord Activity</span>
+          <div class="checkbox">
+            <input type="checkbox" id="discord_rpc" data-setting="discord_rpc" />
+            <label for="discord_rpc"></label>
+          </div>
+        </div>
+        <div class="option">
+          <span>Menu Keybind</span>
+          <div class="right">
+            <button id="menu_keybind_btn" style="cursor: pointer;">Right Shift</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-section">
+        The "Unlimited FPS" setting has been removed to prevent resource overuse. This will not have any negative impact
+        on your game, as it will continue to run at the highest refresh rate your monitor allows. Instead, your
+        potential FPS are now being displayed inside of the native Info HUD.
+      </div>
+
+      <div class="management-section">
+        <div class="mgmt-row">
+          <button id="open-swapper-btn" class="juice-button">
+            <i class="fas fa-folder-open"></i> Swapper Folder
+          </button>
+          <button id="open-scripts-btn" class="juice-button">
+            <i class="fas fa-code"></i> Scripts Folder
+          </button>
+        </div>
+        <button id="reset-settings-btn" class="juice-button danger-btn">
+          <i class="fas fa-undo"></i> Reset Dawn Client Settings
+        </button>
+      </div>
+    </div>
+
+    <div id="scripts-options" class="options">
+      <div class="scripts-container">
+        <div class="script-section">
+          <div class="script-header" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-box-open"></i>
+              <span>Chest Opener</span>
+            </div>
+            <button id="chest-opener-stop-btn" class="juice-button"
+              style="--accent: 255, 0, 0; padding: 5px 10px; margin: 0; min-width: 35px; height: 35px;">
+              <i class="fas fa-stop"></i>
+            </button>
+          </div>
+          <div class="script-content">
+            <div class="script-option">
+              <span>Select Opener</span>
+              <select id="chest-opener-select">
+                <option value="none">None</option>
+                <option disabled>Loading...</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="script-header" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-user-edit"></i>
+              <span>Local Customizations</span>
+              <div class="refresh-needed" title="Some changes require a page refresh (F5) to take effect">
+                <i class="fas fa-sync-alt"></i>
+                Requires Refresh
+              </div>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="local_customs_enabled" data-setting="local_customs_enabled" />
+              <label for="local_customs_enabled"></label>
+            </div>
+          </div>
+          <div class="script-content">
+
+            <div class="script-dropdown">
+              <div class="script-dropdown-header">
+                <i class="fas fa-angle-right"></i>
+                <span>Custom Gradient</span>
+              </div>
+              <div class="script-dropdown-content" style="display: none;">
+                <div class="script-option">
+                  <span>Animated Gradient</span>
+                  <div class="checkbox">
+                    <input type="checkbox" id="local_gradient_animated" data-setting="local_gradient_animated" />
+                    <label for="local_gradient_animated"></label>
+                  </div>
+                </div>
+                <div class="script-option">
+                  <span>Gradient Rotation</span>
+                  <div class="right" style="display: flex; align-items: center; gap: 10px;">
+                    <span id="local_gradient_rot_val">90°</span>
+                    <input type="range" id="local_gradient_rot" data-setting="local_gradient_rot" min="0" max="360"
+                      value="90" />
+                  </div>
+                </div>
+                <div class="script-option">
+                  <span>Shadow Blur</span>
+                  <div class="right" style="display: flex; align-items: center; gap: 10px;">
+                    <span id="local_gradient_blur_val">5px</span>
+                    <input type="range" id="local_gradient_blur" data-setting="local_gradient_blur" min="0" max="50"
+                      value="5" />
+                  </div>
+                </div>
+                <div class="script-option">
+                  <span>Shadow Color</span>
+                  <div class="right" style="display: flex; align-items: center; gap: 10px;">
+                    <input type="text" id="local_gradient_shadow_hex" value="#000000" maxlength="7"
+                      style="width: 80px;" />
+                    <input type="color" id="local_gradient_shadow_color" value="#000000" />
+                  </div>
+                </div>
+                <div class="script-option" id="local-gradient-preview-container"
+                  style="justify-content: center; padding: 10px 0;">
+                  <div id="local-gradient-preview-text"
+                    style="font-size: 1.5rem; font-weight: 800; text-align: center;">Name Preview</div>
+                </div>
+                <div class="script-option" style="flex-direction: column; align-items: flex-start; gap: 10px;">
+                  <span>Gradient Colors</span>
+                  <div id="local-gradient-colors" class="gradient-colors-list">
+                  </div>
+                  <button id="add-gradient-color-btn" class="juice-button" style="width: 100%;">
+                    <i class="fas fa-plus"></i> Add Color
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="script-dropdown">
+              <div class="script-dropdown-header">
+                <i class="fas fa-angle-right"></i>
+                <span>Custom Badges</span>
+              </div>
+              <div class="script-dropdown-content" style="display: none;">
+                <div id="local-badges-list" class="badges-list">
+                </div>
+                <button id="add-local-badge-btn" class="juice-button" style="width: 100%; margin-top: 10px;">
+                  <i class="fas fa-plus"></i> Add Badge
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="script-section">
+          <div class="script-header">
+            <i class="fas fa-paint-brush"></i>
+            <span>Skin Swapper</span>
+            <div class="restart-needed" title="Changing skins requires a client restart to take effect">
+              <i class="fas fa-redo"></i>
+              Requires Restart
+            </div>
+          </div>
+          <div class="script-content">
+            <div class="script-option">
+              <span>Select Weapon</span>
+              <select id="skin-select">
+                <option value="revolver">Revolver</option>
+                <option value="bayonet">Bayonet</option>
+                <option value="tomahawk">Tomahawk</option>
+                <option value="scar">SCAR</option>
+                <option value="shark">Shark</option>
+                <option value="weatie">Weatie</option>
+                <option value="vita">VITA</option>
+                <option value="ar9">AR-9</option>
+                <option value="lar">LAR</option>
+                <option value="m60">M60</option>
+                <option value="mac10">MAC-10</option>
+              </select>
+            </div>
+            <div class="script-option">
+              <div class="upload-area" id="skin-upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Drop image here or click to browse</span>
+                <div class="upload-hint">Accepts .webp, .png, .jpg, .jpeg</div>
+              </div>
+              <input type="file" id="skin-file-input" accept=".webp,.png,.jpg,.jpeg" style="display: none;" />
+            </div>
+            <div class="script-option">
+              <span>Or load from URL</span>
+              <input type="text" id="skin-url-input" placeholder="https://..." />
+            </div>
+            <div class="script-option" id="skin-preview-container" style="display: none;">
+              <div class="preview-wrapper">
+                <img id="skin-preview" alt="Skin Preview" />
+              </div>
+            </div>
+            <div class="script-actions">
+              <button id="save-skin-btn" class="juice-button primary">
+                <i class="fas fa-save"></i>
+                <span>Save Skin</span>
+              </button>
+              <button id="open-skins-folder-btn" class="juice-button">
+                <i class="fas fa-folder-open"></i>
+                <span>Open Folder</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="script-section">
+          <div class="script-header">
+            <i class="fas fa-volume-up"></i>
+            <span>Sound Swapper</span>
+            <div class="restart-needed" title="Changing sounds requires a client restart to take effect">
+              <i class="fas fa-redo"></i>
+              Requires Restart
+            </div>
+          </div>
+          <div class="script-content">
+            <div class="script-option">
+              <span>Select Sound</span>
+              <select id="sound-select">
+                <option value="dash">Dash</option>
+                <option value="reload">Reload</option>
+                <option value="hit">Hit</option>
+                <option value="kill1">Kill 1</option>
+                <option value="kill2">Kill 2</option>
+                <option value="kill3">Kill 3</option>
+                <option value="kill4">Kill 4</option>
+                <option value="kill5">Kill 5</option>
+                <option value="wound1">Wound 1</option>
+                <option value="wound2">Wound 2</option>
+                <option value="userevolver">Use Revolver</option>
+                <option value="usebayonet">Use Bayonet/Tomahawk</option>
+                <option value="usescar">Use SCAR</option>
+                <option value="useshark">Use Shark</option>
+                <option value="useweatie">Use Weatie</option>
+                <option value="usevita">Use VITA</option>
+                <option value="usear9">Use AR-9</option>
+                <option value="uselar">Use LAR</option>
+                <option value="usem60">Use M60</option>
+                <option value="usemac10">Use MAC-10</option>
+                <option value="stepdirt">Step on Dirt</option>
+                <option value="stepgrass">Step on Grass</option>
+                <option value="stepmud">Step on Mud</option>
+                <option value="stepsand">Step on Sand</option>
+                <option value="stepstone">Step on Stone</option>
+              </select>
+            </div>
+            <div class="script-option">
+              <div class="upload-area" id="sound-upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Drop .mp3 file here or click to browse</span>
+                <div class="upload-hint">Accepts .mp3 files only</div>
+              </div>
+              <input type="file" id="sound-file-input" accept=".mp3" style="display: none;" />
+            </div>
+            <div class="script-option" id="sound-preview-container" style="display: none;">
+              <div class="sound-player">
+                <button id="sound-play-btn" class="play-btn">
+                  <i class="fas fa-play"></i>
+                </button>
+                <div class="sound-info">
+                  <span id="sound-filename">No file selected</span>
+                  <div class="volume-control">
+                    <i id="sound-volume-icon" class="fas fa-volume-up"></i>
+                    <input type="range" id="sound-volume" min="0" max="1" step="0.01" value="1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="script-actions">
+              <button id="save-sound-btn" class="juice-button primary">
+                <i class="fas fa-save"></i>
+                <span>Save Sound</span>
+              </button>
+              <button id="open-sounds-folder-btn" class="juice-button">
+                <i class="fas fa-folder-open"></i>
+                <span>Open Folder</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery-options" class="options">
+      <div class="gallery-container">
+        <div class="gallery-header-bar">
+          <span class="gallery-title">Gallery</span>
+          <button id="gallery-refresh" class="juice-button"><i class="fas fa-sync-alt"></i></button>
+        </div>
+        <div id="gallery-content" class="gallery-content">
+          <div class="gallery-loading">Loading gallery...</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about-options" class="options">
+      <div class="about-page">
+        <div class="about-header">
+          <img id="dawn-about-icon" alt="Dawn Client Icon" class="about-icon">
+          <div class="about-title">
+            <h1>Dawn Client</h1>
+            <span class="about-version" id="dawn-about-version">v2.0</span>
+          </div>
+        </div>
+        <div class="about-info">
+          <p class="about-description">A lightweight Tauri client for Kirka.io focusing on performance, user
+            customization and quality of life features.</p>
+          <div class="about-credits">
+            <span class="about-label">Made by</span>
+            <span class="about-value">Vipex</span>
+          </div>
+        </div>
+        <div class="about-links">
+          <a href="https://discord.gg/VsMEQ3HWs2" target="_blank" class="about-btn discord">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+          </a>
+          <a href="https://github.com/zVipexx/dawn-client-v2" target="_blank" class="about-btn github">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+        <div class="about-footer">
+          <p class="about-help">For any help regarding this client, feel free to contact <strong>zVipexx</strong> on
+            Discord.</p>
+          <p class="about-creds">Full credits of the Chest Opener go to <strong>Cheeseburger</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style id="dawn-custom-styles"></style>

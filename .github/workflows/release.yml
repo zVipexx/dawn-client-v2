@@ -1,0 +1,61 @@
+name: "build"
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-tauri:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-latest
+            os_name: windows
+            tauri_args: ""
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ""
+
+      - name: install frontend dependencies
+        run: npm install
+
+      - name: Build Tauri App
+        run: npm run tauri build -- ${{ matrix.tauri_args }}
+
+      - name: rename Windows artifacts
+        if: matrix.platform == 'windows-latest'
+        shell: pwsh
+        run: |
+          $version = (Get-Content src-tauri/tauri.conf.json | ConvertFrom-Json).version
+          $msi = Get-ChildItem -Path "src-tauri/target/release/bundle/msi/*.msi" | Select-Object -First 1
+          if ($msi) {
+            $newName = "Dawn_Client_${version}_setup_windows_x64.msi"
+            Rename-Item -Path $msi.FullName -NewName $newName
+            echo "MSI_PATH=src-tauri/target/release/bundle/msi/$newName" >> $env:GITHUB_ENV
+          }
+
+      - name: Upload Windows Artifact
+        if: matrix.platform == 'windows-latest'
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: ${{ env.MSI_PATH }}
+          body: |
+            A new era
+
+
