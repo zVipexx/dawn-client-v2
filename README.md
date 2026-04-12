@@ -1,3 +1,7 @@
+# [DISCONTINUED]
+Please use https://github.com/zVipexx/dawn-client
+
+
 # 🚀 Dawn Client v2
 
 A lightweight **unofficial desktop client for Kirka.io**, built with **Tauri** and focused on performance, user customization and quality of life features.
